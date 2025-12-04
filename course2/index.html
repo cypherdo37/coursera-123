@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Bộ Sưu Tập Ảnh Đẹp Của Bé</title>
+    <style>
+        body { font-family: Comic Sans MS, cursive; text-align: center; background: pink; }
+        h1 { color: purple; }
+        #big { 
+            height: 400px; 
+            background: lightyellow; 
+            margin: 20px auto; 
+            font-size: 30px; 
+            line-height: 400px;
+            background-size: cover;
+            background-position: center;
+        }
+        .small { 
+            width: 180px; 
+            margin: 10px; 
+            border: 5px solid white; 
+            cursor: pointer; 
+        }
+        .small:focus { border: 10px solid red; }
+    </style>
+</head>
+
+<body onload="themTabIndex()">
+
+    <h1>Bộ Sưu Tập Ảnh Đẹp Của Bé</h1>
+
+    <div id="big">
+        Dùng chuột hoặc phím Tab để chọn ảnh nhỏ nhé!
+    </div>
+
+    <img class="small" src="https://picsum.photos/300/300?random=1" alt="Ảnh mèo con dễ thương" 
+         onmouseover="xemAnh(this)" onmouseleave="boDi()" 
+         onfocus="xemAnh(this)" onblur="boDi()" tabindex="0">
+
+    <img class="small" src="https://picsum.photos/300/300?random=2" alt="Ảnh chú chó đang cười" 
+         onmouseover="xemAnh(this)" onmouseleave="boDi()" 
+         onfocus="xemAnh(this)" onblur="boDi()" tabindex="0">
+
+    <img class="small" src="https://picsum.photos/300/300?random=3" alt="Cánh đồng hoa hướng dương" 
+         onmouseover="xemAnh(this)" onmouseleave="boDi()" 
+         onfocus="xemAnh(this)" onblur="boDi()" tabindex="0">
+
+    <img class="small" src="https://picsum.photos/300/300?random=4" alt="Biển xanh và cát trắng" 
+         onmouseover="xemAnh(this)" onmouseleave="boDi()" 
+         onfocus="xemAnh(this)" onblur="boDi()" tabindex="0">
+
+    <img class="small" src="https://picsum.photos/300/300?random=5" alt="Cầu vồng sau cơn mưa" 
+         onmouseover="xemAnh(this)" onmouseleave="boDi()" 
+         onfocus="xemAnh(this)" onblur="boDi()" tabindex="0">
+
+    <img class="small" src="https://picsum.photos/300/300?random=6" alt="Bé đang ăn kem siêu ngon" 
+         onmouseover="xemAnh(this)" onmouseleave="boDi()" 
+         onfocus="xemAnh(this)" onblur="boDi()" tabindex="0">
+
+<script>
+
+function xemAnh(anhNho) {
+    document.getElementById("big").style.backgroundImage = "url('" + anhNho.src + "')";
+    document.getElementById("big").innerHTML = anhNho.alt;
+}
+
+function boDi() {
+    document.getElementById("big").style.backgroundImage = "url('')";
+    document.getElementById("big").innerHTML = "Dùng chuột hoặc phím Tab để chọn ảnh nhỏ nhé!";
+}
+
+function themTabIndex() {
+    console.log("Trang đã tải xong, đang thêm tabindex...");
+    var tatCaAnh = document.getElementsByClassName("small");
+    for (var i = 0; i < tatCaAnh.length; i++) {
+        tatCaAnh[i].tabIndex = 0;   
+
+    }
+}
+</script>
+
+</body>
+</html>
